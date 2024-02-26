@@ -1,0 +1,12 @@
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.AssemblyInfoInputs.cache
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.AssemblyInfo.cs
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.csproj.CoreCompileInputs.cache
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.sourcelink.json
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.deps.json
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.dll
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.pdb
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.dll
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\refint\GasStation.Logic.dll
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.pdb
+C:\Users\aetha\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\ref\GasStation.Logic.dll

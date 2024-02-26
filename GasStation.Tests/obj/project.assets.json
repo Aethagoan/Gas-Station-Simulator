@@ -381,6 +381,16 @@
             "related": ".xml"
           }
         }
+      },
+      "GasStation.Logic/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/GasStation.Logic.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GasStation.Logic.dll": {}
+        }
       }
     }
   },
@@ -974,10 +984,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "GasStation.Logic/1.0.0": {
+      "type": "project",
+      "path": "../GasStation.Logic/GasStation.Logic.csproj",
+      "msbuildProject": "../GasStation.Logic/GasStation.Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "GasStation.Logic >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.6.0",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
@@ -1011,7 +1027,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\aetha\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj": {
+              "projectPath": "C:\\Users\\aetha\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

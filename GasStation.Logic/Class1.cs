@@ -9,6 +9,8 @@ public class RNG
 public class GasStation
 {
     public List<Pump> Pumps {get; private set;}
+
+
 }
 
 public class Pump
@@ -41,7 +43,8 @@ public class Pump
 public class Car
 {
     public double GasDemand {get; private set;}
-    public int TimeInSeconds {get; private set}
+    public int TimeInSeconds {get; private set;}
+    public bool HasBeenServed {get; private set;} = false;
     
     public Car(double gasDemand, int timeInSeconds){
         GasDemand = gasDemand;

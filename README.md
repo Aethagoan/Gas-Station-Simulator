@@ -7,6 +7,8 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 1. Car structure with an amount of gas requested plus the amount of time it would take to pump  
 0. Tank strucutre that can keep track/has a method to subtract from the total.  
 0. Some type of queue for cars to wait in, whether that be a literal line or available parking spaces.  
+0. Revenue inside of gas station to keep track of money  
+0. Some function that creates random cars and passes them along at random intervals.
 
 
 
@@ -14,9 +16,17 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 Monday 26 February 2024 -  
 Time start: 2:26 pm  
 Time stop: 4:00 pm  
+Attendees: All
 Goal: Create basic underlying functionality for the Gas station objects.  
 Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tank.  
   
+Tuesday 27 February 2024 -  
+Time start: 10:00AM  
+Time stop:  11:00AM
+Atendees: All
+Goal: Work on the project simulation logic.
+Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
+
 ### Records of individual sessions - Agustin  
 
   
@@ -29,10 +39,33 @@ Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tan
   
 # Scenario outlines  
 
-1. New cars arrive at the station at a pseudo-random rate  
-2. A car will remain at a pump for a pseudo-random amount of time  
-3. A car will pump a pseudo-random quantity of a pseudo-randomly selected grade of gas  
-4. If a pump is out of gas then a car must go to another pump  
-5. If there are no available pumps a car will wait in one of the available spaces next to a pump for a pseudo-random amount of time  
-6. If there are no available spaces to wait the car will drive away and give business to someone else  
+1. A car arrives at the station.  
+The car finds an available pump.  
+The car takes time to pump gas with no issues (and pays).  
+The car leaves.  
+  
+2. A car arrives at the station.  
+The car cannot find an available pump.  
+The car finds an available spot to wait at the pump.  
+The car is willing to wait for a period longer than the person at the pump takes.  
+Car at the pump finishes.  
+The car moves to the pump.  
+The car takes time to pump gas with no issues (and pays).  
+The car leaves.  
+  
+3. A car arrives at the station.
+The car cannot find an available pump.  
+The car cannot find an available space.  
+The car leaves.   
+  
+4. A car arrives at the station.  
+The car finds an available pump.  
+The station does not have enough gas to serve the car.  
+The car leaves.  
+  
+5. The simulation creates cars at random intervals.  
+The simulation gives the cars to the station.  
+The station handles the cars.  
+  
+6.  
 

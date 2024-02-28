@@ -27,7 +27,12 @@ Atendees: All
 Goal: Work on the project simulation logic.
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
 
-### Records of individual sessions - Agustin  
+### Records of individual sessions - Agustin 
+Wednesday 28 February 2024 -  
+Time start: 9:00 AM  
+Time stop:  9:35 AM
+Goal: Finish the project simulation logic.
+Accomplished: Simulation can be run and works as expected. Can be displayed to the console.
 
   
 ### Records of individual sessions - Aidan  

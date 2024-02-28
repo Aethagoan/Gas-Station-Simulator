@@ -65,5 +65,13 @@ public class GasStationTests
         highOctaneTank.Add(amountToAdd);
         Assert.AreEqual(5500, highOctaneTank.TotalAmount);
     }
+
+
+    [Test]
+     public void DisplaySimulation()
+    {
+        var GasStation = new GasStation.Logic.GasStation(4);
+        GasStation.DisplaySimulation();
+    }
 }
 

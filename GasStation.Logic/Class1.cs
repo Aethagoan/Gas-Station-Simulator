@@ -1,24 +1,24 @@
 ﻿namespace GasStation.Logic;
 
 
-public class RNG 
+public class RNG
 {
     public static Random Random = new Random(42);
 }
 
 public class GasStation
 {
-    private double Revenue = 0;
-    public List<Pump> Pumps {get; private set;}
-    public List<Car> Cars {get; private set;}
+    public static double Revenue {get; set;}=  0;
+    public List<Pump> Pumps { get; private set; }
+    public List<Car> Cars { get; private set; }
 
-    private void CarArrives()
+    private async Task CarArrives()
     {
-        double gasDemand = RNG.Random.Next(5,20);
+        double gasDemand = RNG.Random.Next(5, 20);
         int timeSpent = (int)gasDemand;
         TankType tankType;
-        
-        switch (RNG.Random.Next(0,3))
+
+        switch (RNG.Random.Next(0, 3))
         {
             case 0:
                 tankType = TankType.HighOctane;
@@ -33,11 +33,9 @@ public class GasStation
                 tankType = TankType.Mixed;
                 break;
         }
-        
+
         Car car = new Car(gasDemand, timeSpent, tankType);
 
-        // find available pump
-        // bool foundpump = false;
         foreach (Pump p in Pumps)
         {
             if (p.CanServe(car))
@@ -48,20 +46,63 @@ public class GasStation
         }
         // if no pump can serve the car it drives away
     }
-    // car goes to pump
 
-    // car pumps gas and pays -> tanks subtracted from -> Revenue is added to.
+    public GasStation(int numberOfPumps)
+    {
+        Pumps = new List<Pump>();
+        Tank tank1 = new Tank(TankType.HighOctane);
+        Tank tank2 = new Tank(TankType.LowOctane);
+        for (int i = 0; i < numberOfPumps; i++)
+        {
+            Pumps.Add(new Pump(tank1, tank2));
+        }
+    }
+
+    public async void StartSimulation()
+    {
+        while (true)
+        {
+            await Task.Delay(RNG.Random.Next(1, 5000));
+            CarArrives();
+        }
+    }
+
+
+    public void DisplaySimulation()
+    {
+        Console.Clear();
+        Console.WriteLine("Gas Station Simulation Status:");
+        Console.WriteLine($"Total Revenue: {Revenue:C}");
+        Console.WriteLine("Pumps Status:");
+
+        foreach (var pump in Pumps)
+        {
+            var currentCarInfo = pump.Current != null ? $"Car demanding {pump.Current.GasDemand}L of {pump.Current.TankType}" : "No car";
+            var nextCarInfo = pump.Next != null ? $"Next Car demanding {pump.Next.GasDemand}L of {pump.Next.TankType}" : "No next car";
+            Console.WriteLine($"- Pump [{Pumps.IndexOf(pump) + 1}]: Current: {currentCarInfo}, Next: {nextCarInfo}");
+        }
+
+        Console.WriteLine("Tanks Status:");
+
+        Pump p = Pumps[0]; // all pumps point to the same tanks
+
+        Console.WriteLine($"- High Octane Tank: {p.HighOctaneTank.TotalAmount}L left");
+        Console.WriteLine($"- Low Octane Tank: {p.LowOctaneTank.TotalAmount}L left");
+
+    }
 
 }
 
 public class Pump
 {
-    public Tank HighOctaneTank {get; private set;}
-    public Tank LowOctaneTank {get; private set;}
+    public Tank HighOctaneTank { get; private set; }
+    public Tank LowOctaneTank { get; private set; }
 
     public Car? Current = null;
     public Car? Next = null;
-    
+
+    private Task CurrentTask;
+
     public bool IsPumpOccupied() => Current != null;
     public bool IsSpaceOccupied() => Next != null;
 
@@ -72,12 +113,19 @@ public class Pump
             if (!IsPumpOccupied())
             {
                 Current = car;
-                SubstractCarGasolineType(car);
-                await Task.Delay(car.TimeInSeconds * 1000);
+                CurrentTask = Task.Run(async () =>
+                {
+                    SubstractCarGasolineType(car);
+                    await Task.Delay(car.TimeInSeconds * 1000);
+                    GasStation.Revenue += car.GasDemand * 12.45;
+                    Current = null;
+                });
+                await CurrentTask;
             }
-            if (!IsSpaceOccupied())
+            else if (!IsSpaceOccupied())
             {
                 Next = car;
+                MakeCarWait(car, CurrentTask);
             }
         }
     }
@@ -87,7 +135,8 @@ public class Pump
         await servingTask;
         if (IsPumpOccupied())
             throw new Exception("Pump was occupied when it should be free");
-        Serve(car);
+        Next = null;
+        await Serve(car);
     }
 
     private void SubstractCarGasolineType(Car car)
@@ -117,23 +166,27 @@ public class Pump
         return LowOctaneTank.TotalAmount > car.GasDemand / 2 && HighOctaneTank.TotalAmount > car.GasDemand / 2;
     }
 
-    public bool PumpPremium(double amount){
+    public bool PumpPremium(double amount)
+    {
         HighOctaneTank.Subtract(amount);
         return true;
     }
 
-    public bool PumpRegular(double amount){
+    public bool PumpRegular(double amount)
+    {
         LowOctaneTank.Subtract(amount);
         return true;
     }
- 
-    public bool PumpMixed(double amount){
-        HighOctaneTank.Subtract(amount/2);
-        LowOctaneTank.Subtract(amount/2);
+
+    public bool PumpMixed(double amount)
+    {
+        HighOctaneTank.Subtract(amount / 2);
+        LowOctaneTank.Subtract(amount / 2);
         return true;
     }
 
-    public Pump(Tank highOctaneTank, Tank lowOctaneTank, bool isPumpOccupied = false, bool isSpaceOccupied = false){
+    public Pump(Tank highOctaneTank, Tank lowOctaneTank, bool isPumpOccupied = false, bool isSpaceOccupied = false)
+    {
         HighOctaneTank = highOctaneTank;
         LowOctaneTank = lowOctaneTank;
         // IsPumpOccupied = isPumpOccupied;
@@ -143,44 +196,51 @@ public class Pump
 
 public class Car
 {
-    public double GasDemand {get; private set;}
-    public int TimeInSeconds {get; private set;}
-    public bool HasBeenServed {get; private set;} = false;
-    public TankType TankType {get; private set;} 
+    public double GasDemand { get; private set; }
+    public int TimeInSeconds { get; private set; }
+    public bool HasBeenServed { get; private set; } = false;
+    public TankType TankType { get; private set; }
 
-    
-    public Car(double gasDemand, int timeInSeconds, TankType tankType){
+
+    public Car(double gasDemand, int timeInSeconds, TankType tankType)
+    {
         GasDemand = gasDemand;
-        TimeInSeconds = TimeInSeconds;
+        TimeInSeconds = timeInSeconds;
         TankType = tankType;
     }
 }
 
-public enum TankType {
+public enum TankType
+{
     HighOctane,
     LowOctane,
     Mixed
 }
 
-public class Tank {
-    public double TotalAmount{get; private set;}
-    public TankType Type {get; private set;}
+public class Tank
+{
+    public double TotalAmount { get; private set; }
+    public TankType Type { get; private set; }
 
-    public Tank(TankType type, double totalAmount = 10000) {
+    public Tank(TankType type, double totalAmount = 10000)
+    {
         Type = type;
         TotalAmount = totalAmount;
     }
 
-    public bool Subtract(double gasAmount) {
-        
-        if (gasAmount < TotalAmount && gasAmount > 0) {
+    public bool Subtract(double gasAmount)
+    {
+
+        if (gasAmount < TotalAmount && gasAmount > 0)
+        {
             TotalAmount -= gasAmount;
             return true;
         }
         return false;
     }
 
-    public bool Add(double gasAmount) {
+    public bool Add(double gasAmount)
+    {
         TotalAmount += gasAmount;
         return true;
     }

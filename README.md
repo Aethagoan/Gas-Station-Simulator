@@ -36,7 +36,11 @@ Accomplished: Simulation can be run and works as expected. Can be displayed to t
 
   
 ### Records of individual sessions - Aidan  
-  
+Friday 1 March 2024 -  
+Time start: 10:20AM  
+Time stop: 11:05AM  
+Goal: Fix some Simulation logic to better reflect the real world.  
+Accomplished: Made the logic work better, runs as expected.  
 
 ### Records of individual sessions - Helen  
 

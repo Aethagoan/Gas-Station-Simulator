@@ -49,13 +49,13 @@ Accomplished: Made the logic work better, runs as expected.
 # Scenario outlines  
 
 [FULLFILLED]  
-1. A car arrives at the station.  
+1) A car arrives at the station.  
 The car finds an available pump.  
 The car takes time to pump gas with no issues (and pays).  
 The car leaves.  
 
 [FULLFILLED]  
-2. A car arrives at the station.  
+2) A car arrives at the station.  
 The car cannot find an available pump.  
 The car finds an available spot to wait at the pump.  
 The car is willing to wait for a period longer than the person at the pump takes.  
@@ -65,21 +65,21 @@ The car takes time to pump gas with no issues (and pays).
 The car leaves.  
 
 [FULLFILLED]  
-3. A car arrives at the station.  
+3) A car arrives at the station.  
 The car cannot find an available pump.  
 The car cannot find an available space.  
 The car leaves.   
 
 [FULFILLED]
-4. A car arrives at the station.  
+4) A car arrives at the station.  
 The car finds an available pump.  
 The station does not have enough gas to serve the car.  
 The car leaves.  
 
 [FULLFILLED]  
-5. The simulation creates cars at random intervals.  
+5) The simulation creates cars at random intervals.  
 The simulation gives the cars to the station.  
 The station handles the cars.  
   
-6.  
+6)  
 

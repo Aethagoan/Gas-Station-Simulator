@@ -16,14 +16,14 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 Monday 26 February 2024 -  
 Time start: 2:26 pm  
 Time stop: 4:00 pm  
-Attendees: All
+Attendees: All  
 Goal: Create basic underlying functionality for the Gas station objects.  
 Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tank.  
   
 Tuesday 27 February 2024 -  
 Time start: 10:00AM  
 Time stop:  11:00AM  
-Atendees: All    
+Atendees: All.  
 Goal: Work on the project simulation logic.  
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
 

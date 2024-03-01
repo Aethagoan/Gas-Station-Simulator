@@ -23,7 +23,7 @@ Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tan
 Tuesday 27 February 2024 -  
 Time start: 10:00AM  
 Time stop:  11:00AM  
-Atendees: All  
+Atendees: All    
 Goal: Work on the project simulation logic.  
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
 

@@ -30,7 +30,7 @@ Accomplished: Created a lot of logic to verify if we can serve a car. And made a
 ### Records of individual sessions - Agustin 
 Wednesday 28 February 2024 -  
 Time start: 9:00 AM  
-Time stop:  9:35 AM
+Time stop:  9:35 AM  
 Goal: Finish the project simulation logic.  
 Accomplished: Simulation can be run and works as expected. Can be displayed to the console.
 

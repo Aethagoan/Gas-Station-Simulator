@@ -12,7 +12,7 @@ public class GasStation
     public List<Pump> Pumps { get; private set; }
     public List<Car> Cars { get; private set; }
 
-    private async Task CarArrives()
+    public async Task CarArrives()
     {
         double gasDemand = RNG.Random.Next(5, 20);
         int timeSpent = (int)gasDemand;
@@ -36,70 +36,14 @@ public class GasStation
 
         Car car = new Car(gasDemand, timeSpent, tankType);
 
-        // A new car is created, and then looking at all the pumps CanServe is Called.
-
-        bool foundPump = false;
-
         foreach (Pump p in Pumps)
         {
-            // can serve makes a car wait in line for a pump if it is occupied. This is not how the simulation should work.
-            // the simulation should look at all of the pumps first, and then if they are all full it should wait.
-
-            
-            if (p.CanServe(car)) 
-            { // if there is enough gas at the station
-                /* this is where the problem is. Just because a pump (or more accurately in the current context, a "line" at a pump)
-                    can serve a car, it doesn't mean it should.
-                    each car should check for empty pumps first before waiting.
-                */
-                // if someone is here, skip!
-                if (p.Current != null){
-                    continue;
-                }
-                else {
-                    foundPump = true;
-                    p.Serve(car);
-                    break;
-                }
-
-                // p.Serve(car); // must not be awaited to run in the background
-                // break;
-            }
-
-
-        }
-
-        // when the foreach loop above exits, if we haven't found a pump, we then look for a space to sit at.
-
-        if (!foundPump) {
-            foreach (Pump p in Pumps) {
-
-                if (p.CanServe(car)) { // if there is enough gas at the station
-
-                    if (p.Next != null) { // if someone is already waiting here, skip
-                        continue;
-                    }
-                    else { // otherwise we then can serve the person (put them into the line.)
-                        foundPump = true;
-                        p.Serve(car);
-                        break;
-                    }
-
-                }
-
-
-            }
-            // if the foreach loop exits without anything happening (all spots are full) we can do something here using foundpump if we want to keep track of something
-            // example
-            if (!foundPump) {
-                // we could not serve this person
+            if (p.CanServe(car))
+            {
+                p.Serve(car); // must not be awaited to run in the background
+                break;
             }
         }
-        
-        
-
-        
-
         // if no pump can serve the car it drives away
     }
 
@@ -114,7 +58,6 @@ public class GasStation
         }
     }
 
-    // simulation waits for random amount of time and then calls CarArrives();
     public async void StartSimulation()
     {
         while (true)
@@ -302,3 +245,4 @@ public class Tank
         return true;
     }
 }
+

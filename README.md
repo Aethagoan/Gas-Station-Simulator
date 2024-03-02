@@ -33,6 +33,12 @@ Time start: 9:00 AM
 Time stop:  9:35 AM  
 Goal: Finish the project simulation logic.  
 Accomplished: Simulation can be run and works as expected. Can be displayed to the console.  
+
+Friday 1 March 2024 -  
+Time start: 6:00 PM  
+Time stop:  7:39 PM  
+Goal: Test scenarios
+Accomplished: wrote passing tests for 5 of 7 scenarios in ScenarioTests.cs
   
   
 ### Records of individual sessions - Aidan  

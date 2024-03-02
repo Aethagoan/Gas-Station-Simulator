@@ -122,9 +122,9 @@ public class GasStation
         }
     }
 
-    public void DisplaySimulation()
+    public async void DisplaySimulation()
     {
-        Console.Clear();
+        Console.Clear(); // throws error in the debugger
         Console.WriteLine("Gas Station Simulation Status:");
         Console.WriteLine($"Total Revenue: {Revenue:C}");
         Console.WriteLine("Pumps Status:");

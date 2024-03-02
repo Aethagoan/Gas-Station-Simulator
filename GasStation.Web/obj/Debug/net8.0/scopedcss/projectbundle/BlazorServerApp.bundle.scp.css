@@ -1,3 +1,12 @@
+/* _content/BlazorServerApp/Pages/Index.razor.rz.scp.css */
+.stationLot[b-6gblk87mqa] {
+    display:flex;
+    flex-direction: row;
+}
+
+.pumpLine[b-6gblk87mqa], .spaceLine[b-6gblk87mqa] {
+    margin: 0 1rem 0 1rem; 
+}
 /* _content/BlazorServerApp/Shared/MainLayout.razor.rz.scp.css */
 .page[b-gp1kaosdc3] {
     position: relative;

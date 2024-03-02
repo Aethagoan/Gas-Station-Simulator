@@ -2,14 +2,14 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using BlazorServerApp.Data;
 
-var GasStation = new GasStation.Logic.GasStation(4);
-GasStation.StartSimulation();
-while ( true)
-{
-    await Task.Delay(100);
-    GasStation.DisplaySimulation();
+// var GasStation = new GasStation.Logic.GasStation(4);
+// GasStation.StartSimulation();
+// while ( true)
+// {
+//     await Task.Delay(100);
+//     GasStation.DisplaySimulation();
     
-}
+// }
 
 
 var builder = WebApplication.CreateBuilder(args);

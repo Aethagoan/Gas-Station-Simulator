@@ -1,0 +1,8 @@
+.stationLot[b-6gblk87mqa] {
+    display:flex;
+    flex-direction: row;
+}
+
+.pumpLine[b-6gblk87mqa], .spaceLine[b-6gblk87mqa] {
+    margin: 0 1rem 0 1rem; 
+}

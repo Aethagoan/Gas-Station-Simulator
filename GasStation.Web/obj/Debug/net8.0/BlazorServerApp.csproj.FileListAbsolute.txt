@@ -142,3 +142,4 @@ C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.
 C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Web\obj\Debug\net8.0\BlazorServerApp.pdb
 C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Web\obj\Debug\net8.0\BlazorServerApp.genruntimeconfig.cache
 C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Web\obj\Debug\net8.0\ref\BlazorServerApp.dll
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Web\obj\Debug\net8.0\scopedcss\Pages\Index.razor.rz.scp.css

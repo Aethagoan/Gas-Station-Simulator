@@ -1,14 +1,66 @@
 ﻿@page "/"
 
+<link rel="stylesheet" href="./Index.razor.css">
+
 <PageTitle>Index</PageTitle>
 
 <p>Gas station UI</p>
 
+<p>Total Revenue: @gasStation.Revenue</p>
+
 <div class="stationLot">
     <div class="pumpLine">
-        <div class="pump1"></div><div class="pumpspace"></div><div class="pump2"></div><div class="pump3"></div><div class="pumpspace"></div><div class="pump4"></div>
+        <div class="pump1">@pump1message</div>
+        <div class="pumpspace"></div>
+        <div class="pump2">@pump2message</div>
+        <div class="pump3">@pump3message</div>
+        <div class="pumpspace"></div>
+        <div class="pump4">@pump4message</div>
     </div>
     <div class="spaceLine">
-        <div class="space1"></div><div class="spaceempty"></div><div class="space2"></div><div class="space3"></div><div class="spaceempty"></div><div class="space1"></div>
+        <div class="space1">@space1message</div>
+        <div class="spaceempty"></div>
+        <div class="space2">@space2message</div>
+        <div class="space3">@space3message</div>
+        <div class="spaceempty"></div>
+        <div class="space1">@space4message</div>
     </div>
 </div>
+
+@code {
+    GasStation.Logic.GasStation gasStation = new GasStation.Logic.GasStation(4);
+    string pump1message = "";
+    string pump2message = "";
+    string pump3message = "";
+    string pump4message = "";
+    string space1message = "";
+    string space2message = "";
+    string space3message = "";
+    string space4message = "";
+
+    string emptymessage = "no car"
+
+    protected async override void OnInitialized()
+    {
+        
+        gasStation.StartSimulation();
+        while (true)
+        {
+            await Task.Delay(1000);
+            if(gasStation != null){
+                pump1message = gasStation.Pumps[0].Current != null ? $"Car demanding {gasStation.Pumps[0].Current.GasDemand}L of {gasStation.Pumps[0].Current.TankType}" : emptymessage;
+                pump2message = gasStation.Pumps[1].Current != null ? $"Car demanding {gasStation.Pumps[1].Current.GasDemand}L of {gasStation.Pumps[1].Current.TankType}" : emptymessage;
+                pump3message = gasStation.Pumps[2].Current != null ? $"Car demanding {gasStation.Pumps[2].Current.GasDemand}L of {gasStation.Pumps[2].Current.TankType}" : emptymessage;
+                pump4message = gasStation.Pumps[3].Current != null ? $"Car demanding {gasStation.Pumps[3].Current.GasDemand}L of {gasStation.Pumps[3].Current.TankType}" : emptymessage;
+                space1message = gasStation.Pumps[0].Next != null ? $"Car demanding {gasStation.Pumps[0].Next.GasDemand}L of {gasStation.Pumps[0].Next.TankType}" : emptymessage;
+                space2message = gasStation.Pumps[1].Next != null ? $"Car demanding {gasStation.Pumps[1].Next.GasDemand}L of {gasStation.Pumps[1].Next.TankType}" : emptymessage;
+                space3message = gasStation.Pumps[2].Next != null ? $"Car demanding {gasStation.Pumps[2].Next.GasDemand}L of {gasStation.Pumps[2].Next.TankType}" : emptymessage;
+                space4message = gasStation.Pumps[3].Next != null ? $"Car demanding {gasStation.Pumps[3].Next.GasDemand}L of {gasStation.Pumps[3].Next.TankType}" : emptymessage;
+            }
+
+            StateHasChanged();
+            @* gasStation.DisplaySimulation(); *@
+        
+        }
+    }
+}

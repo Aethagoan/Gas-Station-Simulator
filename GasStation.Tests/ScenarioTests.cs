@@ -18,10 +18,10 @@ public class GasStationSimulationTests
     [Test]
     public async Task CarArrivesAndUsesAvailablePump()
     {
-        var initialRevenue = Logic.GasStation.Revenue;
+        var initialRevenue = gasStation.Revenue;
         await gasStation.CarArrives(); 
         await Task.Delay(20000); // Wait enough time for the car to be served
-        Assert.Greater(Logic.GasStation.Revenue, initialRevenue, "Revenue should increase after serving a car.");
+        Assert.Greater(gasStation.Revenue, initialRevenue, "Revenue should increase after serving a car.");
     }
 
     [Test]

@@ -108,7 +108,7 @@ public class GasStation
         Tank tank2 = new Tank(TankType.LowOctane);
         for (int i = 0; i < numberOfPumps; i++)
         {
-            Pumps.Add(new Pump(this, tank1, tank2));
+            Pumps.Add(new Pump(tank1, tank2, this));
         }
     }
 
@@ -227,7 +227,7 @@ public class Pump
         return true;
     }
 
-    public Pump(GasStation station, Tank highOctaneTank, Tank lowOctaneTank, bool isPumpOccupied = false, bool isSpaceOccupied = false)
+    public Pump(Tank highOctaneTank, Tank lowOctaneTank, GasStation? station = null, bool isPumpOccupied = false, bool isSpaceOccupied = false)
     {
         gasStation = station;
         HighOctaneTank = highOctaneTank;

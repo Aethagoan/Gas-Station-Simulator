@@ -5,7 +5,7 @@ public class RNG
 }
 public class GasStation
 {
-    public static double Revenue {get; set;}=  0;
+    public double Revenue {get; set;} = 0;
     public List<Pump> Pumps { get; private set; }
     public List<Car> Cars { get; private set; }
     public async Task CarArrives()
@@ -77,6 +77,7 @@ public class GasStation
                     else { // otherwise we then can serve the person (put them into the line.)
                         foundPump = true;
                         p.Serve(car);
+                        Revenue += car.GasDemand * 12.45;
                         break;
                     }
 
@@ -107,7 +108,7 @@ public class GasStation
         Tank tank2 = new Tank(TankType.LowOctane);
         for (int i = 0; i < numberOfPumps; i++)
         {
-            Pumps.Add(new Pump(tank1, tank2));
+            Pumps.Add(new Pump(this, tank1, tank2));
         }
     }
 
@@ -115,12 +116,12 @@ public class GasStation
     public async void StartSimulation()
     {
         while (true)
-
         {
             await Task.Delay(RNG.Random.Next(1, 5000));
             CarArrives();
         }
     }
+
     public void DisplaySimulation()
     {
         Console.Clear();
@@ -141,6 +142,7 @@ public class GasStation
 }
 public class Pump
 {
+    public GasStation gasStation;
     public Tank HighOctaneTank { get; private set; }
     public Tank LowOctaneTank { get; private set; }
     public Car? Current = null;
@@ -159,8 +161,8 @@ public class Pump
                 {
                     SubstractCarGasolineType(car);
                     await Task.Delay(car.TimeInSeconds * 1000);
-                    GasStation.Revenue += car.GasDemand * 12.45;
-                    Current = null;
+                    gasStation.Revenue += car.GasDemand * 12.45;
+                    Current = null; 
                 });
                 await CurrentTask;
             }
@@ -171,6 +173,7 @@ public class Pump
             }
         }
     }
+
     private async void MakeCarWait(Car car, Task servingTask)
     {
         await servingTask;
@@ -179,6 +182,7 @@ public class Pump
         Next = null;
         await Serve(car);
     }
+
     private void SubstractCarGasolineType(Car car)
     {
         switch (car.TankType)
@@ -194,6 +198,7 @@ public class Pump
                 break;
         }
     }
+
     public bool CanServe(Car car)
     {
         if (Current != null && Next != null)
@@ -204,6 +209,7 @@ public class Pump
             return LowOctaneTank.TotalAmount > car.GasDemand;
         return LowOctaneTank.TotalAmount > car.GasDemand / 2 && HighOctaneTank.TotalAmount > car.GasDemand / 2;
     }
+
     public bool PumpPremium(double amount)
     {
         HighOctaneTank.Subtract(amount);
@@ -220,8 +226,10 @@ public class Pump
         LowOctaneTank.Subtract(amount / 2);
         return true;
     }
-    public Pump(Tank highOctaneTank, Tank lowOctaneTank, bool isPumpOccupied = false, bool isSpaceOccupied = false)
+
+    public Pump(GasStation station, Tank highOctaneTank, Tank lowOctaneTank, bool isPumpOccupied = false, bool isSpaceOccupied = false)
     {
+        gasStation = station;
         HighOctaneTank = highOctaneTank;
         LowOctaneTank = lowOctaneTank;
         // IsPumpOccupied = isPumpOccupied;

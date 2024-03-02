@@ -27,12 +27,19 @@ public class GasStationSimulationTests
     [Test]
     public async Task CarWaitsForOccupiedPumpAndThenUsesIt()
     {
-        await gasStation.CarArrives(); 
+        // load pumps up
+        for (int i = 0; i < gasStation.Pumps.Count; i++)
+        {
+            await gasStation.CarArrives();
+        }
         var initialCarCountAtPumps = gasStation.Pumps.Count(p => p.Current != null);
 
+        // push another car
         await gasStation.CarArrives();
+        // wait a bit
         await Task.Delay(4000);
 
+        // at this point the car should be gone and the next one moved into place
         var carCountAtPumpsAfter = gasStation.Pumps.Count(p => p.Current != null);
         Assert.AreEqual(initialCarCountAtPumps, carCountAtPumpsAfter, "A waiting car should use a pump after it becomes available.");
     }

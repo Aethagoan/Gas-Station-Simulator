@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj": {}
+    "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj": {}
   },
   "projects": {
-    "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj": {
+    "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj",
+        "projectUniqueName": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj",
         "projectName": "GasStation.Logic",
-        "projectPath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj",
-        "packagesPath": "/Users/agus/.nuget/packages/",
-        "outputPath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/obj/",
+        "projectPath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj",
+        "packagesPath": "C:\\Users\\xefin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/agus/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\xefin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

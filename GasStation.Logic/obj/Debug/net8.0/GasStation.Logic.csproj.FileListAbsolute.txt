@@ -34,3 +34,15 @@ C:\Users\aidan.anderson\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\G
 C:\Users\aidan.anderson\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\refint\GasStation.Logic.dll
 C:\Users\aidan.anderson\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.pdb
 C:\Users\aidan.anderson\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\ref\GasStation.Logic.dll
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.deps.json
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.dll
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\bin\Debug\net8.0\GasStation.Logic.pdb
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.AssemblyInfoInputs.cache
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.AssemblyInfo.cs
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.csproj.CoreCompileInputs.cache
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.sourcelink.json
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.dll
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\refint\GasStation.Logic.dll
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\GasStation.Logic.pdb
+C:\Users\xefin\Desktop\Scripts\Classwork\CS2450\GasStationSimulation\GasStation.Logic\obj\Debug\net8.0\ref\GasStation.Logic.dll

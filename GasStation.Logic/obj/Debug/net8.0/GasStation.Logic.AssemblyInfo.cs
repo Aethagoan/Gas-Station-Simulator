@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GasStation.Logic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+015f2597285febd7f4c8d4cc9ccf587bb6b791b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1cb56d388b214d2573ac1b82aa82553a5a35c720")]
 [assembly: System.Reflection.AssemblyProductAttribute("GasStation.Logic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GasStation.Logic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

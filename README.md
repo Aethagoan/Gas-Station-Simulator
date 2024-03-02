@@ -49,7 +49,7 @@ Goal: Fix some Simulation logic to better reflect the real world.
 Accomplished: Made the logic work better, runs as expected.  
 
 Saturday 2 March 2024 -  
-Time start - 9:00 AM  
+Time start: 9:00 AM  
 Time stop: 11:25 AM  
 Goal: Create a working UI  
 Accomplished: Made a UI that works  

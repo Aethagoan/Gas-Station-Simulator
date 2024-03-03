@@ -19,7 +19,7 @@ public class GasStationSimulationTests
     public async Task CarArrivesAndUsesAvailablePump()
     {
         var initialRevenue = gasStation.Revenue;
-        await gasStation.CarArrives(); 
+        await gasStation.CarArrives();
         await Task.Delay(20000); // Wait enough time for the car to be served
         Assert.Greater(gasStation.Revenue, initialRevenue, "Revenue should increase after serving a car.");
     }
@@ -66,7 +66,8 @@ public class GasStationSimulationTests
     [Test]
     public async Task CarLeavesIfNotEnoughGas()
     {
-        gasStation.Pumps.ForEach(p => {
+        gasStation.Pumps.ForEach(p =>
+        {
             p.HighOctaneTank.Subtract(p.HighOctaneTank.TotalAmount - 1);
             p.LowOctaneTank.Subtract(p.LowOctaneTank.TotalAmount - 1);
         });
@@ -75,7 +76,7 @@ public class GasStationSimulationTests
 
 
         await gasStation.CarArrives();
-    
+
 
         var carCountAtPumpsAfter = gasStation.Pumps.Count(p => p.Current != null);
         Assert.AreEqual(initialCarCountAtPumps, carCountAtPumpsAfter, "Car should leave if there's not enough gas.");
@@ -84,10 +85,44 @@ public class GasStationSimulationTests
     [Test]
     public async Task SimulationCreatesCarsAtRandomIntervals()
     {
-    
+
         var task = Task.Run(() => gasStation.StartSimulation());
         await Task.Delay(5000);
 
         Assert.IsTrue(gasStation.Pumps.Any(p => p.Current != null || p.Next != null), "Simulation should create cars and attempt to serve them.");
     }
+
+
+    [Test]
+    public async Task CarChoosesPumpWithSufficientSpecificGasType()
+    {
+        gasStation.Pumps[0].HighOctaneTank.Subtract(gasStation.Pumps[0].HighOctaneTank.TotalAmount - 500); 
+        gasStation.Pumps[1].HighOctaneTank.Add(500); 
+
+        await gasStation.CarArrives();
+
+        await Task.Delay(1000);
+
+        var isServed = gasStation.Pumps.Any(p => p.Current != null && p.HighOctaneTank.TotalAmount >= 500);
+        Assert.IsTrue(isServed, "Car should choose a pump with sufficient specific gas type.");
+    }
+
+    [Test]
+    public async Task CarLeavesDueToLongWaitTimesDuringBusyPeriod()
+    {
+        for (int i = 0; i < gasStation.Pumps.Count * 2; i++)
+        {
+            await gasStation.CarArrives();
+        }
+
+        var initialCarCount = gasStation.Pumps.Sum(p => p.Current != null ? 1 : 0) + gasStation.Pumps.Sum(p => p.Next != null ? 1 : 0);
+
+        await gasStation.CarArrives(); 
+        await Task.Delay(2000); 
+
+        var finalCarCount = gasStation.Pumps.Sum(p => p.Current != null ? 1 : 0) + gasStation.Pumps.Sum(p => p.Next != null ? 1 : 0);
+
+        Assert.AreEqual(initialCarCount, finalCarCount, "Car count should not increase, indicating the new car left due to long wait times.");
+    }
+
 }

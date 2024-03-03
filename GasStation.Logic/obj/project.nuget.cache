@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "64pW/CwN170yb9Sf3xzmYHUfB7i4DBlaTa3WRIv8K+CV8Hw5LHhilxXo7QwH/EfiXFf0VaFLE34ReQ5Jf7+ZKw==",
+  "dgSpecHash": "i2mgomc+qgvLGn4N4PgS2ZcmTtGqqq0LLej451Z1rTQT58dMhFeN5jKNAcB0VP8LPtXnfyr5lOGkJ3DrY/aqJw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj",
+  "projectFilePath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

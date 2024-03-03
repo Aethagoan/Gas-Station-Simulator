@@ -27,34 +27,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\xefin\\.nuget\\packages\\": {}
+    "/Users/agus/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Web\\BlazorServerApp.csproj",
+      "projectUniqueName": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Web/BlazorServerApp.csproj",
       "projectName": "BlazorServerApp",
-      "projectPath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Web\\BlazorServerApp.csproj",
-      "packagesPath": "C:\\Users\\xefin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Web\\obj\\",
+      "projectPath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Web/BlazorServerApp.csproj",
+      "packagesPath": "/Users/agus/.nuget/packages/",
+      "outputPath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Web/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\xefin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/agus/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj": {
-              "projectPath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Logic\\GasStation.Logic.csproj"
+            "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj": {
+              "projectPath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Logic/GasStation.Logic.csproj"
             }
           }
         }
@@ -87,7 +86,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

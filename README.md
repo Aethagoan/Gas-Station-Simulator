@@ -11,6 +11,25 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 0. Some function that creates random cars and passes them along at random intervals.
 
 
+# Week Retrospective
+
+## What Went Well
+- Core Functionality: Created and tested core classes (`GasStation`, `Car`, `Pump`, `Tank`) effectively.
+- Simulation Logic: Developed robust simulation logic that accurately manages car arrivals, servicing, and payment.
+- Gas Blend Handling: Implemented functionality for handling different gas blends and ensuring accurate servicing.
+- UI Development: Successfully developed a functional UI for visualizing the simulation's state.
+- Testing: Achieved comprehensive test coverage for most scenario outlines, ensuring the simulation's reliability.
+
+## New Stuff to Try Next Time
+- Queue Management Algorithms: Investigate advanced queue management algorithms for better peak time handling.
+- Dynamic Pricing Feature: Implement dynamic pricing based on demand and supply for added realism.
+- Customer Feedback Mechanism: Add a mechanism to simulate customer feedback on wait times and service quality.
+
+## Stuff We Did This Time That We Will Not Repeat Next Time
+- Delayed Integration Testing: Early integration testing between `Tank` and `Pump` classes was overlooked, leading to late discovery of issues. Next time, we'll integrate and test components earlier in the development cycle.
+- Concurrency Challenges: Encountered challenges with concurrency and simultaneous car arrivals. Future projects will incorporate concurrency considerations from the start.
+- Manual Testing Reliance: Over-relied on manual testing for certain aspects, which was inefficient. We plan to invest in automated testing, particularly for UI and integration tests, to enhance test efficiency and coverage.
+
 
 ### Records of group sessions  
 Monday 26 February 2024 -  
@@ -27,6 +46,18 @@ Atendees: All.
 Goal: Work on the project simulation logic.  
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
 
+### Log of group daily standups
+Monday 26 February 2024 -  
+Attendees: All  
+Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tank.  
+Blockers: Had issues integrating Tank and Pump classes to accurately track gas consumption and volume.
+  
+Tuesday 27 February 2024 -  
+Atendees: All.  
+Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Bl
+Blockers: Concurrency issues with car arrivals, especially in handling multiple cars arriving simultaneously and managing their orderly service or waiting process.
+
+
 ### Records of individual sessions - Agustin 
 Wednesday 28 February 2024 -  
 Time start: 9:00 AM  
@@ -39,6 +70,12 @@ Time start: 6:00 PM
 Time stop:  7:39 PM  
 Goal: Test scenarios
 Accomplished: wrote passing tests for 5 of 7 scenarios in ScenarioTests.cs
+
+Friday 2 March 2024 -  
+Time start: 6:40 PM  
+Time stop:  7:28 PM  
+Goal: Finish scenario outline and tests
+Accomplished: Added two more scenarius to the outline and wrote passing tests
   
   
 ### Records of individual sessions - Aidan  
@@ -93,6 +130,16 @@ The car leaves.
 V) The simulation creates cars at random intervals.  
 The simulation gives the cars to the station.  
 The station handles the cars.  
-  
-VI)  
 
+[FULFILLED]  
+VI) A car arrives needing a specific blend of gas.  
+The station calculates the blend using available gas types.  
+The car is served with the correct blend (e.g., 50-50 high and low octane for mid-grade).  
+The car leaves after paying based on the amount and type of gas.  
+
+[FULFILLED]  
+VII) Multiple cars arrive simultaneously when the station has limited availability.  
+First car finds an available pump and starts refueling.  
+Second car waits due to all pumps being occupied.  
+Third car leaves because both pumps and waiting spots are occupied.  
+As the first car leaves, the second car moves to the pump, and the simulation handles it accordingly.

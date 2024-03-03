@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bCf5kbzA+MTnQ7JBZAmfPkR9o4dym8FOWlcPO0Im/SNSj8WgpqAwY4xgLY/8pEMj6Xht1g3a6OQROiq9GKKlMw==",
+  "dgSpecHash": "N4fvcA4RaRigswZFwHH64rwPM2YqRqYRZ6H3Lnk7NuarcnThiqtQSO4CJ8+MJ1g/UAtzvGOFs83RxV/WYG4/ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\xefin\\Desktop\\Scripts\\Classwork\\CS2450\\GasStationSimulation\\GasStation.Web\\BlazorServerApp.csproj",
+  "projectFilePath": "/Users/agus/Documents/my-code-dir/CS2450/Gas-Station-Simulator/GasStation.Web/BlazorServerApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

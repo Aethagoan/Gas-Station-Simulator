@@ -7,30 +7,34 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 1. Car structure with an amount of gas requested plus the amount of time it would take to pump  
 0. Tank strucutre that can keep track/has a method to subtract from the total.  
 0. Some type of queue for cars to wait in, whether that be a literal line or available parking spaces.  
-0. Revenue inside of gas station to keep track of money  
-0. Some function that creates random cars and passes them along at random intervals.
+0. Revenue inside of gas station to keep track of money.  
+0. Some function that creates random cars and passes them along at random intervals.  
+0. Some way to pause / resume the simulation.  
+0. A way to modify all values in the simulation. (Over acheiving (very last))  
+0. Have a clerk poowered by a large language model that answers all questions from customers
 
-
-# Week Retrospective
-
-## What Went Well
-- Core Functionality: Created and tested core classes (`GasStation`, `Car`, `Pump`, `Tank`) effectively.
-- Simulation Logic: Developed robust simulation logic that accurately manages car arrivals, servicing, and payment.
-- Gas Blend Handling: Implemented functionality for handling different gas blends and ensuring accurate servicing.
-- UI Development: Successfully developed a functional UI for visualizing the simulation's state.
-- Testing: Achieved comprehensive test coverage for most scenario outlines, ensuring the simulation's reliability.
-
-## New Stuff to Try Next Time
-- Queue Management Algorithms: Investigate advanced queue management algorithms for better peak time handling.
-- Dynamic Pricing Feature: Implement dynamic pricing based on demand and supply for added realism.
-- Customer Feedback Mechanism: Add a mechanism to simulate customer feedback on wait times and service quality.
-
-## Stuff We Did This Time That We Will Not Repeat Next Time
-- Delayed Integration Testing: Early integration testing between `Tank` and `Pump` classes was overlooked, leading to late discovery of issues. Next time, we'll integrate and test components earlier in the development cycle.
-- Concurrency Challenges: Encountered challenges with concurrency and simultaneous car arrivals. Future projects will incorporate concurrency considerations from the start.
-- Manual Testing Reliance: Over-relied on manual testing for certain aspects, which was inefficient. We plan to invest in automated testing, particularly for UI and integration tests, to enhance test efficiency and coverage.
-
-
+  
+  
+# Week Retrospective - Week 1  
+  
+## What Went Well  
+- Core Functionality: Created and tested core classes (`GasStation`, `Car`, `Pump`, `Tank`) effectively.  
+- Simulation Logic: Developed robust simulation logic that accurately manages car arrivals, servicing, and payment.  
+- Gas Blend Handling: Implemented functionality for handling different gas blends and ensuring accurate servicing.  
+- UI Development: Successfully developed a functional UI for visualizing the simulation's state.  
+- Testing: Achieved comprehensive test coverage for most scenario outlines, ensuring the simulation's reliability.  
+  
+## New Stuff to Try Next Time  
+- Queue Management Algorithms: Investigate advanced queue management algorithms for better peak time handling.  
+- Dynamic Pricing Feature: Implement dynamic pricing based on demand and supply for added realism.  
+- Customer Feedback Mechanism: Add a mechanism to simulate customer feedback on wait times and service quality.  
+  
+## Stuff We Did This Time That We Will Not Repeat Next Time  
+- Delayed Integration Testing: Early integration testing between `Tank` and `Pump` classes was overlooked, leading to late discovery of issues. Next time, we'll integrate and test components earlier in the development cycle.  
+- Concurrency Challenges: Encountered challenges with concurrency and simultaneous car arrivals. Future projects will incorporate concurrency considerations from the start.  
+- Manual Testing Reliance: Over-relied on manual testing for certain aspects, which was inefficient. We plan to invest in automated testing, particularly for UI and integration tests, to enhance test efficiency and coverage.  
+  
+  
 ### Records of group sessions  
 Monday 26 February 2024 -  
 Time start: 2:26 pm  
@@ -40,25 +44,38 @@ Goal: Create basic underlying functionality for the Gas station objects.
 Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tank.  
   
 Tuesday 27 February 2024 -  
-Time start: 10:00AM  
-Time stop:  11:00AM  
+Time start: 10:00 am  
+Time stop:  11:00 am  
 Atendees: All.  
 Goal: Work on the project simulation logic.  
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Scenario Outlines.  
-
-### Log of group daily standups
+  
+Thursday 14 March 2024 -  
+Time start: 11:30 am  
+Time stop: 12:30 am  
+Attendees: All.  
+Goal: Reach milestone 2.  
+Accomplished: fullfilled all requirements in milestone 2.  
+  
+### Log of group daily standups  
 Monday 26 February 2024 -  
-Attendees: All  
+Attendees: All.  
 Accomplished: Wrote and tested the following classes: GasStation, Car, Pump, Tank.  
 Blockers: Had issues integrating Tank and Pump classes to accurately track gas consumption and volume.
   
 Tuesday 27 February 2024 -  
-Atendees: All.  
+Attendees: All.  
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Bl
 Blockers: Concurrency issues with car arrivals, especially in handling multiple cars arriving simultaneously and managing their orderly service or waiting process.
 
 
-### Records of individual sessions - Agustin 
+hursday 14 March 2024 -
+TAttendees: All
+  ### Records of.  
+Log/Accomplished: Went over milestone 2, figured out what we needed and how we'd code it.  
+Blockers: none this time around.  
+
+   individual sessions - Agustin 
 Wednesday 28 February 2024 -  
 Time start: 9:00 AM  
 Time stop:  9:35 AM  
@@ -143,3 +160,9 @@ First car finds an available pump and starts refueling.
 Second car waits due to all pumps being occupied.  
 Third car leaves because both pumps and waiting spots are occupied.  
 As the first car leaves, the second car moves to the pump, and the simulation handles it accordingly.
+
+VII()I) Ability to modoify the simulation when poaused.  puause the simulation.  Simulation starts.  SPPause button is pressed.  Simu
+lation P 
+
+IX) Customer insults the clerk and leaves if there is no space at the station
+

@@ -19,7 +19,7 @@ public class GasStationSimulationTests
     public async Task CarArrivesAndUsesAvailablePump()
     {
         var initialRevenue = gasStation.Revenue;
-        await gasStation.CarArrives();
+        gasStation.CarArrives();
         await Task.Delay(20000); // Wait enough time for the car to be served
         Assert.Greater(gasStation.Revenue, initialRevenue, "Revenue should increase after serving a car.");
     }
@@ -30,12 +30,12 @@ public class GasStationSimulationTests
         // load pumps up
         for (int i = 0; i < gasStation.Pumps.Count; i++)
         {
-            await gasStation.CarArrives();
+            gasStation.CarArrives();
         }
         var initialCarCountAtPumps = gasStation.Pumps.Count(p => p.Current != null);
 
         // push another car
-        await gasStation.CarArrives();
+        gasStation.CarArrives();
         // wait a bit
         await Task.Delay(4000);
 
@@ -49,12 +49,12 @@ public class GasStationSimulationTests
     {
         for (int i = 0; i < gasStation.Pumps.Count * 2; i++)
         {
-            await gasStation.CarArrives();
+            gasStation.CarArrives();
         }
         var initialCarCountAtPumps = gasStation.Pumps.Count(p => p.Current != null);
         var initialCarCountWaiting = gasStation.Pumps.Count(p => p.Next != null);
 
-        await gasStation.CarArrives();
+        gasStation.CarArrives();
         await Task.Delay(1000);
 
         var carCountAtPumpsAfter = gasStation.Pumps.Count(p => p.Current != null);
@@ -75,7 +75,7 @@ public class GasStationSimulationTests
         var initialCarCountAtPumps = gasStation.Pumps.Count(p => p.Current != null);
 
 
-        await gasStation.CarArrives();
+        gasStation.CarArrives();
 
 
         var carCountAtPumpsAfter = gasStation.Pumps.Count(p => p.Current != null);
@@ -99,7 +99,7 @@ public class GasStationSimulationTests
         gasStation.Pumps[0].HighOctaneTank.Subtract(gasStation.Pumps[0].HighOctaneTank.TotalAmount - 500); 
         gasStation.Pumps[1].HighOctaneTank.Add(500); 
 
-        await gasStation.CarArrives();
+        gasStation.CarArrives();
 
         await Task.Delay(1000);
 
@@ -112,12 +112,12 @@ public class GasStationSimulationTests
     {
         for (int i = 0; i < gasStation.Pumps.Count * 2; i++)
         {
-            await gasStation.CarArrives();
+            gasStation.CarArrives();
         }
 
         var initialCarCount = gasStation.Pumps.Sum(p => p.Current != null ? 1 : 0) + gasStation.Pumps.Sum(p => p.Next != null ? 1 : 0);
 
-        await gasStation.CarArrives(); 
+        gasStation.CarArrives(); 
         await Task.Delay(2000); 
 
         var finalCarCount = gasStation.Pumps.Sum(p => p.Current != null ? 1 : 0) + gasStation.Pumps.Sum(p => p.Next != null ? 1 : 0);

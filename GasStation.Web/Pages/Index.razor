@@ -8,7 +8,7 @@
 
 
 
-<p>Total Revenue: @gasStation.Revenue</p>
+<p>Total Revenue: @Math.Round(gasStation.Revenue, 3)</p>
 <p>Low Octane Tank: @gasStation.tank1.TotalAmount</p>
 <p>High Octane Tank: @gasStation.tank2.TotalAmount</p>
 
@@ -17,19 +17,27 @@
 <div class="stationLot">
     <div class="pumpLine">
         <div class="pump1">Pump 1: @pump1message</div>
+        <p>Pump revenue: @Math.Round(gasStation.Pumps[0].Revenue, 3)</p>
         <div class="pumpspace"></div>
         <div class="pump2">Pump 2: @pump2message</div>
+        <p>Pump revenue: @Math.Round(gasStation.Pumps[1].Revenue, 3)</p>
         <div class="pump3">Pump 3: @pump3message</div>
+        <p>Pump revenue: @Math.Round(gasStation.Pumps[2].Revenue, 3)</p>
         <div class="pumpspace"></div>
         <div class="pump4">Pump 4: @pump4message</div>
+        <p>Pump revenue: @Math.Round(gasStation.Pumps[3].Revenue, 3)</p>
     </div>
     <div class="spaceLine">
         <div class="space1">Waiting 1: @space1message</div>
+        <br>
         <div class="spaceempty"></div>
         <div class="space2">Waiting 2: @space2message</div>
+        <br>
         <div class="space3">Waiting 3: @space3message</div>
+        <br>
         <div class="spaceempty"></div>
         <div class="space1">Waiting 4: @space4message</div>
+        <br>
     </div>
 </div>
 

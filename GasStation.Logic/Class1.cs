@@ -114,7 +114,7 @@ public class GasStation
     }
 
     // simulation waits for random amount of time and then calls CarArrives();
-    public async void StartSimulation()
+    public async Task StartSimulation()
     {
         while (true)
         {
@@ -123,7 +123,7 @@ public class GasStation
         }
     }
 
-    public async void DisplaySimulation()
+    public async Task DisplaySimulation()
     {
         Console.Clear(); // throws error in the debugger
         Console.WriteLine("Gas Station Simulation Status:");
@@ -178,7 +178,7 @@ public class Pump
         }
     }
 
-    private async void MakeCarWait(Car car, Task servingTask)
+    private async Task MakeCarWait(Car car, Task servingTask)
     {
         await servingTask;
         if (IsPumpOccupied())

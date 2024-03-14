@@ -161,8 +161,25 @@ Second car waits due to all pumps being occupied.
 Third car leaves because both pumps and waiting spots are occupied.  
 As the first car leaves, the second car moves to the pump, and the simulation handles it accordingly.
 
-VII()I) Ability to modoify the simulation when poaused.  puause the simulation.  Simulation starts.  SPPause button is pressed.  Simu
-lation P 
+VIII) Ability to add cars to the simultion with a button.  
+Simulation Starts.  
+The Add Car button on the UI is pressed.  
+A Car is added to the simulation.  
+  
+IX) Ability to pause and resume the simulation.  
+Simulation starts.  
+Pause button is pressed.  
+Simulation Pauses.  
+Resume button is pressed.  
+Simulation resumes.  
 
-IX) Customer insults the clerk and leaves if there is no space at the station
+IX) Ability to modify the simulation during a Pause.  
+Simulation Starts.  
+Pause button is pressed.  
+Values in the simulation, like how much gas is in the station tanks, become modifyable.  
+Value(s) modified.  
+Simulation Resumes.  
+Simulation plays out correctly.  
+  
+X) Customer insults the clerk and leaves if there is no space at the station (We will keep track of lost revenue)  
 

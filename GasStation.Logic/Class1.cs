@@ -8,7 +8,10 @@ public class GasStation
     public double Revenue {get; set;} = 0;
     public List<Pump> Pumps { get; private set; }
     public List<Car> Cars { get; private set; }
-    public async Task CarArrives()
+
+    public Tank tank1;
+    public Tank tank2;
+    public void CarArrives()
     {
         double gasDemand = RNG.Random.Next(5, 20);
         int timeSpent = (int)gasDemand;
@@ -82,8 +85,6 @@ public class GasStation
                     }
 
                 }
-
-
             }
             // if the foreach loop exits without anything happening (all spots are full) we can do something here using foundpump if we want to keep track of something
             // example
@@ -104,8 +105,8 @@ public class GasStation
     public GasStation(int numberOfPumps)
     {
         Pumps = new List<Pump>();
-        Tank tank1 = new Tank(TankType.HighOctane);
-        Tank tank2 = new Tank(TankType.LowOctane);
+        tank1 = new Tank(TankType.HighOctane);
+        tank2 = new Tank(TankType.LowOctane);
         for (int i = 0; i < numberOfPumps; i++)
         {
             Pumps.Add(new Pump(tank1, tank2, this));
@@ -148,6 +149,8 @@ public class Pump
     public Car? Current = null;
     public Car? Next = null;
     private Task CurrentTask;
+    public double Revenue{ get; private set;} = 0;
+
     public bool IsPumpOccupied() => Current != null;
     public bool IsSpaceOccupied() => Next != null;
     public async Task Serve(Car car)
@@ -162,6 +165,7 @@ public class Pump
                     SubstractCarGasolineType(car);
                     await Task.Delay(car.TimeInSeconds * 1000);
                     gasStation.Revenue += car.GasDemand * 12.45;
+                    Revenue += car.GasDemand * 12.45;
                     Current = null; 
                 });
                 await CurrentTask;
@@ -236,6 +240,7 @@ public class Pump
         // IsSpaceOccupied = isSpaceOccupied;
     }
 }
+
 public class Car
 {
     public double GasDemand { get; private set; }
@@ -255,6 +260,7 @@ public enum TankType
     LowOctane,
     Mixed
 }
+
 public class Tank
 {
     public double TotalAmount { get; private set; }

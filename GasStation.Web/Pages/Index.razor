@@ -6,7 +6,13 @@
 
 <p>Gas station UI</p>
 
+
+
 <p>Total Revenue: @gasStation.Revenue</p>
+<p>Low Octane Tank: @gasStation.tank1.TotalAmount</p>
+<p>High Octane Tank: @gasStation.tank2.TotalAmount</p>
+
+<button @onclick="gasStation.CarArrives">Add car</button>
 
 <div class="stationLot">
     <div class="pumpLine">
@@ -27,7 +33,9 @@
     </div>
 </div>
 
+
 @code {
+
     GasStation.Logic.GasStation gasStation = new GasStation.Logic.GasStation(4);
     string pump1message = "";
     string pump2message = "";
@@ -44,6 +52,7 @@
     {
         
         gasStation.StartSimulation();
+        
         while (true)
         {
             await Task.Delay(1000);
@@ -62,5 +71,8 @@
             @* gasStation.DisplaySimulation(); *@
         
         }
+        
+
+        
     }
 }

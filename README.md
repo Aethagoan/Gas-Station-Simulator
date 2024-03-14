@@ -171,7 +171,7 @@ Simulation Pauses.
 Resume button is pressed.  
 Simulation resumes.  
 
-IX) Ability to modify the simulation during a Pause.  
+X) Ability to modify the simulation during a Pause.  
 Simulation Starts.  
 Pause button is pressed.  
 Values in the simulation, like how much gas is in the station tanks, become modifyable.  
@@ -179,5 +179,5 @@ Value(s) modified.
 Simulation Resumes.  
 Simulation plays out correctly.  
   
-X) Customer insults the clerk and leaves if there is no space at the station (We will keep track of lost revenue)  
+XI) Customer insults the clerk and leaves if there is no space at the station (We will keep track of lost revenue)  
 

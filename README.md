@@ -10,8 +10,8 @@ Our simulation will need to keep track of stockpiles for gasoline (tanks), amoun
 0. Revenue inside of gas station to keep track of money.  
 0. Some function that creates random cars and passes them along at random intervals.  
 0. Some way to pause / resume the simulation.  
-0. A way to modify all values in the simulation. (Over acheiving (very last))  
-0. Have a clerk poowered by a large language model that answers all questions from customers
+0. A way to modify all values in the simulation. (Over acheiving)  
+0. Have a clerk powered by a large language model that answers all questions from customers  
 
   
   
@@ -68,14 +68,12 @@ Attendees: All.
 Accomplished: Created a lot of logic to verify if we can serve a car. And made a bit of logic to create cars we may need to refactor later. Updated Bl
 Blockers: Concurrency issues with car arrivals, especially in handling multiple cars arriving simultaneously and managing their orderly service or waiting process.
 
-
-hursday 14 March 2024 -
-TAttendees: All
-  ### Records of.  
+Thursday 14 March 2024 -  
+Attendees: All  
 Log/Accomplished: Went over milestone 2, figured out what we needed and how we'd code it.  
 Blockers: none this time around.  
 
-   individual sessions - Agustin 
+### Records of individual sessions - Agustin 
 Wednesday 28 February 2024 -  
 Time start: 9:00 AM  
 Time stop:  9:35 AM  
